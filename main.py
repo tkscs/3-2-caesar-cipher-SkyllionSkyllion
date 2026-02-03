@@ -28,7 +28,23 @@ ciphertext = ""
 for character in plaintext:
     # do something to the character to encrypt it
     # YOUR CODE HERE
-    encrypted_character = "a" # CHANGE THIS!
+    encrypted_character = ord(character)
+    encrypted_character = encrypted_character*2
+    encrypted_character += 3
+    encrypted_character = chr(encrypted_character)
+    # CHANGE THIS!
     ciphertext += encrypted_character
 
 print(f"{ciphertext = }")
+
+
+decodedtext = ""
+for character in ciphertext:
+    encrypted_character = ord(character)
+    encrypted_character -= 3
+    encrypted_character = encrypted_character//2
+    encrypted_character = chr(encrypted_character)
+    decodedtext += encrypted_character
+
+
+print(f"{decodedtext = }")
